@@ -1,0 +1,37 @@
+[
+    {
+        "company": "Passthrough",
+        "title": "Software Engineer",
+        "dates": "Jan 2023 - Sep 2023",
+        "experience": [
+            "Implemented site-wide redesign, upgrading our design library and building out base components to be used across our customer-facing product",
+            "Created features that allow for a better investor onboarding experience for investment funds, both frontend and backend",
+            "Created features to simplify processes for engineers and staff"
+        ]
+    },
+    {
+        "company": "Doordash/Bbot",
+        "title": "Software Engineer",
+        "dates": "Jan 2021 - Dec 2022",
+        "experience": [
+            "Integrated Bbot’s Order-And-Pay Product with other companies’ products (3rd party delivery, reservations, rewards)",
+            "Designed and built high-demand features for high value restaurants (Multivendor Delivery for foodhalls, Loyalty Integration webhooks)",
+            "Refactored key internal features encompassing large portions of the codebase, and write Django migrations to alter existing records to match",
+            "Directly contributed to $100m acquisition by Doordash as part of a team of 2 engineers working on API and integrations"
+        ]
+    },
+    {
+        "company": "Siemens",
+        "title": "DevOps Engineer",
+        "dates": "Jan 2017 - Dec 2020",
+        "experience": [
+            "Maintained and enhanced global infrastructure consisting of 400+ servers worldwide protecting company assets from malware and intrusions resulting in daily detections of threats, utilizing Puppet, Linux, and Elasticsearch",
+            "Collaborated with small team to develop and maintain UI allowing quick response by cybersecurity analysts to alerts from security infrastructure",
+            "Developed malware/intrusion detection scripts to analyst specs, sifting through petabytes of data daily to create incident alerts",
+            "Coordinated successfully with globally distributed team to confer on product development, challenges, and goals",
+            "Mentored and trained new employees on our infrastructure and development processes",
+            "Installed 71 servers remotely across multiple countries within a couple months",
+            "Subject matter expert on Elasticsearch"
+        ]
+    }
+]

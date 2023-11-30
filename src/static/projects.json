@@ -1,0 +1,41 @@
+[
+    {
+        "name": "This Website",
+        "link": "https://github.com/AndrewBezold/personal_webpage",
+        "description": [
+            {
+                "type": "string",
+                "string": "Personal website, basically a resume in a different form.  Written in Typescript and React, using "
+            },
+            {
+                "type": "link",
+                "string": "Mantine",
+                "link": "https://mantine.dev/"
+            },
+            {
+                "type": "string",
+                "string": " as the design library."
+            }
+        ]
+    },
+    {
+        "name": "Shosetsu",
+        "link": "https://gitlab.com/shosetsuorg/shosetsu",
+        "description": [
+            {
+                "type": "string",
+                "string": "Android app for reading webnovels, written in Kotlin.  Contributing to the project by writing features and fixing bugs."
+            }
+        ]
+    },
+    {
+        "name": "Numerai Infrastructure and Webserver",
+        "link": "https://github.com/AndrewBezold/numerai",
+        "description": [
+            {
+                "type": "string",
+                "string": "Participated in a recurring AI contest.  Wrote multiple machine learning models in Python, along with a webserver to receive webhook requests to run these models live, and infrastructure to manage the model creation and retrain them on a regular basis.  Originally wrote webserver in Go, which was scrapped for flexibility reasons.  Webserver and surrounding infrastructure are in linked repo, models will not be made public."
+            }
+        ]
+    }
+]

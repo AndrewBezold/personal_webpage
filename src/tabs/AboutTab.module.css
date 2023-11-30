@@ -1,0 +1,16 @@
+.root {
+    gap: var(--mantine-spacing-xl);
+    justify-content: center;
+    width: 100%;
+}
+
+.text {
+    flex-direction: column;
+    max-width: 500px;
+    gap: var(--mantine-spacing-md);
+}
+
+.about {
+    flex-direction: column;
+    gap: var(--mantine-spacing-sm);
+}
