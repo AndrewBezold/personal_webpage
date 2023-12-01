@@ -27,7 +27,7 @@
   },
   "scripts": {
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "start": "webpack-dev-server --config webpack.config.js",
     "build": "webpack",
     "test": "react-scripts test",
