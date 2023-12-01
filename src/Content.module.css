@@ -1,9 +1,9 @@
 .root {
-    height: calc(100vh - 72px);
+    flex: 1;
     align-items: center;
 }
 
 .container {
-    padding: 0 15vw;
+    padding: 40px 15vw;
     width: 100%;
 }
