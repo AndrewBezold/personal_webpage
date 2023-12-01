@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: './src/index.tsx',
@@ -51,6 +52,18 @@ module.exports = {
         favicon: "./public/favicon.ico",
     }),
     new ForkTsCheckerWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'public', 'index.css'),
+          to: path.resolve(__dirname, 'dist'),
+        },
+        {
+          from: path.resolve(__dirname, 'public', 'CNAME'),
+          to: path.resolve(__dirname, 'dist'),
+        },
+      ],
+    }),
   ],
   devServer: {
     client: {
