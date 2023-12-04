@@ -1,15 +1,56 @@
 import React from "react";
-import { Flex, Anchor, Text, TextInput, Textarea, Button } from "@mantine/core";
+import {
+  Flex,
+  Anchor,
+  Text,
+  TextInput,
+  Textarea,
+  Button,
+} from "@mantine/core";
+import { isNotEmpty, useForm } from "@mantine/form";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
 export function ContactTab() {
   const [loading, setLoading] = React.useState(false);
-  const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+  const [error, setError] = React.useState<string | null>(null);
 
-  async function handleEmail() {
+  const form = useForm({
+    initialValues: {
+      name: '',
+      email: '',
+      message: '',
+    },
+    validate: {
+      name: isNotEmpty("Enter your name"),
+      email: isNotEmpty("Enter your email address"),
+      message: isNotEmpty("Enter a message"),
+    },
+  });
+
+  interface formProps {
+    name: string;
+    email: string;
+    message: string;
+  }
+
+  async function handleEmail(values: formProps) {
+    const url = "https://portfolio.ddns.net:3001/api/email";
+
     setLoading(true);
-    await sleep(2000).then(() => setLoading(false));
-    //attempt email api call
-    //on failure, display error
+    setError(null);
+    axios.post(url, values)
+      .then(() => {
+        toast.success('Message sent successfully!');
+        form.reset();
+      })
+      .catch(() => {
+        setError("There was a problem sending this message.  Try sending an email instead.");
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }
   return (
     <Flex w="100%" justify="center">
@@ -25,17 +66,25 @@ export function ContactTab() {
           </Anchor>
         </Text>
         <Text>Send me a message using the form below:</Text>
-        <Flex direction="column" gap="sm">
-          <Flex direction="column">
-            <TextInput label="Name" placeholder="Name" />
-            <TextInput label="Email" placeholder="name@example.com" />
-            <Textarea label="Message" placeholder="Message goes here" />
+        <form onSubmit={form.onSubmit(handleEmail)}>
+          <Flex direction="column" gap="sm">
+            <Flex direction="column">
+              <TextInput label="Name" placeholder="Name" {...form.getInputProps('name')} />
+              <TextInput label="Email" placeholder="name@example.com" {...form.getInputProps('email')} />
+              <Textarea label="Message" placeholder="Message goes here" {...form.getInputProps('message')} />
+            </Flex>
+            <Button type="submit" loading={loading}>
+              Send Message
+            </Button>
+            {error ? (
+              <Text size="xs" c="red">
+                {error}
+              </Text>
+            ) : null}
           </Flex>
-          <Button onClick={handleEmail} loading={loading}>
-            Send Message
-          </Button>
-        </Flex>
+        </form>
       </Flex>
+      <ToastContainer position="bottom-center" theme="dark" />
     </Flex>
   );
 }
