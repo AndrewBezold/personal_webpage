@@ -8,7 +8,8 @@
             "Built API endpoints for investment firms to integrate with our product",
             "Designed and built a organization permission system and go-live workflow for fund managers",
             "Built a system to allow for management of multiple levels of trusted domains for a given organization",
-            "Created pre-publication validation for investor questionnaires to ensure resulting subscription documents would be correct"
+            "Created pre-publication validation for investor questionnaires to ensure resulting subscription documents would be correct",
+            "Managed multiple parallel deployments of our product, using Google Cloud Platform"
         ]
     },
     {
@@ -24,15 +25,14 @@
     },
     {
         "company": "Siemens",
-        "title": "DevOps Engineer",
+        "title": "Software Engineer",
         "dates": "Jan 2017 - Dec 2020",
         "experience": [
             "Maintained and enhanced global infrastructure consisting of 400+ servers worldwide protecting company assets from malware and intrusions resulting in daily detections of threats, utilizing Puppet, Linux, and Elasticsearch",
-            "Collaborated with small team to develop and maintain UI allowing quick response by cybersecurity analysts to alerts from security infrastructure",
+            "Built and maintained UI used by analysts to search and dig into alerts from security infrastructure",
+            "Built a system to translate from our in-house search syntax to the syntaxes used by Elasticsearch and other data analytics systems",
             "Developed malware/intrusion detection scripts to analyst specs, sifting through petabytes of data daily to create incident alerts",
-            "Coordinated successfully with globally distributed team to confer on product development, challenges, and goals",
             "Mentored and trained new employees on our infrastructure and development processes",
-            "Installed 71 servers remotely across multiple countries within a couple months",
             "Subject matter expert on Elasticsearch"
         ]
     }
