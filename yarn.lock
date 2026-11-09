@@ -372,6 +372,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/outfit@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "@fontsource/outfit@npm:5.3.0"
+  checksum: 0f009c92c7051257ab64945212aa8d1849f9957fc3bcdd754ecd302987a88cf96c0f3b5146b2bc0098e2e4249ed28c5821a7b74b33b9040b69a5c6cf2ca6c52b
+  languageName: node
+  linkType: hard
+
+"@fontsource/work-sans@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "@fontsource/work-sans@npm:5.3.0"
+  checksum: 353503dcb5e01afb814e3674a6845b80e367cdc22348a407627f83155cb42a544b8909fe76e2734e881603ea0d4b762fa8379dee2217a7a4bbee1eecb89ec1df
+  languageName: node
+  linkType: hard
+
 "@humanfs/core@npm:^0.19.2":
   version: 0.19.2
   resolution: "@humanfs/core@npm:0.19.2"
@@ -5426,6 +5440,8 @@ __metadata:
   resolution: "personal_webpage@workspace:."
   dependencies:
     "@eslint/js": "npm:^9.39.5"
+    "@fontsource/outfit": "npm:^5.3.0"
+    "@fontsource/work-sans": "npm:^5.3.0"
     "@mantine/core": "npm:^9.8.0"
     "@mantine/form": "npm:^9.8.0"
     "@mantine/hooks": "npm:^9.8.0"

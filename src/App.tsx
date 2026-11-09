@@ -1,6 +1,12 @@
 import React from "react";
 import "@mantine/core/styles.css";
+import "@fontsource/outfit/400.css";
+import "@fontsource/outfit/500.css";
+import "@fontsource/outfit/600.css";
+import "@fontsource/work-sans/400.css";
+import "@fontsource/work-sans/500.css";
 import { MantineProvider } from "@mantine/core";
+import { theme } from "./theme";
 import { Header } from "./Header";
 import { Content, TabType } from "./Content";
 import { Footer } from "./Footer";
@@ -44,7 +50,8 @@ function App() {
   const [activeTab, setActiveTab] = React.useState<string>("about");
 
   return (
-    <MantineProvider defaultColorScheme="dark">
+    <MantineProvider theme={theme} defaultColorScheme="dark" forceColorScheme="dark">
+      <div className="app-mesh" aria-hidden="true" />
       <Header activeTab={activeTab} setActiveTab={setActiveTab} tabs={tabs} />
       <Content activeTab={activeTab} tabs={tabsById} />
       <Footer />

@@ -1,5 +1,6 @@
 import { Flex, Anchor, Text } from "@mantine/core";
 import Projects from "../static/projects.json";
+import classes from "./ProjectsTab.module.css";
 
 interface DescriptionPiece {
   type: string;
@@ -25,18 +26,18 @@ interface ProjectProps {
 
 function Project({ name, link, description }: ProjectProps) {
   return (
-    <>
-      <Anchor size="xl" href={link}>
+    <Flex direction="column" gap="xs" className={classes.project}>
+      <Anchor size="xl" href={link} fw={600}>
         {name}
       </Anchor>
-      <Text pl="xl">{parseDescription(description)}</Text>
-    </>
+      <Text>{parseDescription(description)}</Text>
+    </Flex>
   );
 }
 
 export function ProjectsTab() {
   return (
-    <Flex direction="column" gap="md">
+    <Flex direction="column" gap="md" w="100%">
       {Projects.map((project: ProjectProps) => (
         <Project
           key={project.name}
@@ -45,7 +46,7 @@ export function ProjectsTab() {
           description={project.description}
         />
       ))}
-      <Flex direction="column">
+      <Flex className={classes.links}>
         <Anchor href="https://github.com/AndrewBezold">Github</Anchor>
         <Anchor href="https://gitlab.com/andrew.bezold">Gitlab</Anchor>
       </Flex>

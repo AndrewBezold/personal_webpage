@@ -1,4 +1,4 @@
-import { Flex, SimpleGrid, Text, Title, Image } from "@mantine/core";
+import { Flex, Text, Title, Image } from "@mantine/core";
 import WorkExperience from "../static/work_experience.json";
 import PythonIcon from "../static/icons/python.svg";
 import DjangoIcon from "../static/icons/django.png";
@@ -8,6 +8,7 @@ import ReactIcon from "../static/icons/react.svg";
 import KotlinIcon from "../static/icons/kotlin.svg";
 import PostgreSQLIcon from "../static/icons/postgresql.svg";
 import GitIcon from "../static/icons/git.svg";
+import classes from "./WorkTab.module.css";
 
 interface JobProps {
   company: string;
@@ -18,17 +19,17 @@ interface JobProps {
 
 function Job({ company, title, dates, experience }: JobProps) {
   return (
-    <Flex direction="column">
+    <Flex direction="column" className={classes.job}>
       <Flex direction="column">
-        <Flex justify="space-between" align="end" w="500px" gap="md">
+        <Flex className={classes.jobHeader}>
           <Title order={3}>{company}</Title>
-          <Text style={{ whiteSpace: "nowrap" }}>{dates}</Text>
+          <Text style={{ whiteSpace: "nowrap" }} c="dimmed">{dates}</Text>
         </Flex>
-        <Text>{title}</Text>
+        <Text className={classes.jobTitle}>{title}</Text>
       </Flex>
-      <Flex direction="column" mt="sm">
+      <Flex direction="column" mt="sm" className={classes.bullets}>
         {experience.map((line, index) => (
-          <Text key={index} pl="xl">- {line}</Text>
+          <Text key={index}>- {line}</Text>
         ))}
       </Flex>
     </Flex>
@@ -77,7 +78,7 @@ const skills: Array<SkillProps> = [
 
 export function WorkTab() {
   return (
-    <Flex direction="column" gap="xl">
+    <Flex direction="column" gap="xl" w="100%">
       <Flex direction="column">
         <Title order={2}>Education</Title>
         <Flex pl="lg" direction="column">
@@ -87,19 +88,13 @@ export function WorkTab() {
       </Flex>
       <Flex direction="column" gap="sm">
         <Title order={2}>Skills</Title>
-        <Flex>
-          <SimpleGrid cols={skills.length} spacing="md" verticalSpacing="xs">
-            {skills.map((skill) => (
-              <Flex key={skill.name} justify="center">
-                <Image src={skill.icon} w="100px" fit="contain" />
-              </Flex>
-            ))}
-            {skills.map((skill) => (
-              <Flex key={skill.name} justify="center">
-                <Text>{skill.name}</Text>
-              </Flex>
-            ))}
-          </SimpleGrid>
+        <Flex className={classes.skills}>
+          {skills.map((skill) => (
+            <Flex key={skill.name} className={classes.skillChip}>
+              <Image src={skill.icon} className={classes.skillIcon} fit="contain" />
+              <Text size="sm">{skill.name}</Text>
+            </Flex>
+          ))}
         </Flex>
       </Flex>
       <Flex direction="column" gap="md">

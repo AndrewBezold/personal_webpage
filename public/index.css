@@ -2,7 +2,31 @@ html, body, #root {
     height: 100%;
 }
 
+html {
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    background-color: #0e0e1a;
+    color: #eef6f6;
+    font-family: "Work Sans", system-ui, sans-serif;
+}
+
 #root {
+    position: relative;
     display: flex;
     flex-direction: column;
+}
+
+.app-mesh {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(60% 55% at 12% 8%, rgba(27, 138, 138, 0.45), transparent 60%),
+        radial-gradient(55% 60% at 88% 18%, rgba(74, 63, 158, 0.45), transparent 60%),
+        radial-gradient(60% 55% at 20% 95%, rgba(27, 138, 138, 0.3), transparent 60%),
+        radial-gradient(65% 65% at 90% 90%, rgba(74, 63, 158, 0.35), transparent 60%),
+        #0e0e1a;
 }

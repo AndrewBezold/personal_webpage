@@ -1,6 +1,7 @@
 import { Flex, Tabs, Button } from "@mantine/core";
 import { TabType } from "./Content";
 import Resume from "./static/Resume_Andrew_Bezold_20260814.pdf";
+import classes from "./Header.module.css";
 
 interface HeaderProps {
   activeTab: string;
@@ -15,31 +16,37 @@ export function Header({ activeTab, setActiveTab, tabs }: HeaderProps) {
   };
 
   return (
-    <Flex justify="space-between" bg="var(--mantine-color-dark-5)" h="36px">
-      <Flex align="center">
-        <Button variant="subtle" color="white">
-          Andrew Bezold
-        </Button>
-      </Flex>
-      <Flex gap="md">
-        <Tabs value={activeTab} onChange={handleTabChange}>
+    <Flex className={classes.header}>
+      <Button variant="subtle" px="xs" className={classes.wordmark}>
+        Andrew Bezold
+      </Button>
+      <Flex className={classes.navGroup}>
+        <Tabs
+          value={activeTab}
+          onChange={handleTabChange}
+          variant="pills"
+          radius="xl"
+          classNames={{ root: classes.tabsRoot, list: classes.tabsList }}
+        >
           <Tabs.List>
             {tabs.map((tab) => (
               <Tabs.Tab key={tab.id} value={tab.id}>{tab.name}</Tabs.Tab>
             ))}
           </Tabs.List>
+          <span className={classes.scrollHint} aria-hidden="true">›</span>
         </Tabs>
-        <Flex gap="sm">
-          <Button
-            component="a"
-            download="Andrew_Bezold_Resume.pdf"
-            href={Resume}
-          >
-            Download Resume
-          </Button>
-        </Flex>
+        <Button
+          component="a"
+          download="Andrew_Bezold_Resume.pdf"
+          href={Resume}
+          variant="outline"
+          color="cyan"
+          radius="xl"
+          className={classes.cta}
+        >
+          Download Resume
+        </Button>
       </Flex>
-      <div />
     </Flex>
   );
 }

@@ -1,12 +1,30 @@
-.root {
-    gap: var(--mantine-spacing-xl);
+.card {
+    gap: clamp(20px, 4vw, var(--mantine-spacing-xl));
     justify-content: center;
+    align-items: center;
     width: 100%;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: var(--mantine-radius-xl);
+    padding: clamp(24px, 4vw, 40px);
+}
+
+.avatar {
+    width: clamp(140px, 24vw, 220px);
+    height: clamp(140px, 24vw, 220px);
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid rgba(125, 211, 216, 0.55);
+    box-shadow: 0 0 32px -6px rgba(125, 211, 216, 0.35);
 }
 
 .text {
     flex-direction: column;
-    max-width: 500px;
+    max-width: 480px;
     gap: var(--mantine-spacing-md);
 }
 

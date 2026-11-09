@@ -30,7 +30,8 @@ export function AboutTab() {
   const about_me_formatted = format(about_me, years_experience, years_remote);
 
   return (
-    <Flex className={classes.root}>
+    <Flex className={classes.card}>
+      <Image src={image} fit="cover" className={classes.avatar} alt="Andrew Bezold" />
       <Flex className={classes.text}>
         <Title>Andrew Bezold</Title>
         <Flex className={classes.about}>
@@ -39,7 +40,6 @@ export function AboutTab() {
           ))}
         </Flex>
       </Flex>
-      <Image src={image} w="500px" />
     </Flex>
   );
 }

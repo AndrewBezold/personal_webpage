@@ -1,0 +1,11 @@
+.project {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: var(--mantine-radius-lg);
+    padding: clamp(16px, 3vw, 24px);
+}
+
+.links {
+    flex-wrap: wrap;
+    gap: var(--mantine-spacing-md);
+}

@@ -11,6 +11,7 @@ import { isNotEmpty, useForm } from "@mantine/form";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import classes from "./ContactTab.module.css";
 
 export function ContactTab() {
   const [loading, setLoading] = React.useState(false);
@@ -54,7 +55,7 @@ export function ContactTab() {
   }
   return (
     <Flex w="100%" justify="center">
-      <Flex direction="column" gap="md">
+      <Flex direction="column" gap="md" className={classes.card}>
         <Text>
           Send me an{" "}
           <Anchor href="mailto:andrew.bezold@gmail.com">email</Anchor>
