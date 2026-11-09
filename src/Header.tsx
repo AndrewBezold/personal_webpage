@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Flex, Tabs, Button } from "@mantine/core";
 import { TabType } from "./Content";
 import Resume from "./static/Resume_Andrew_Bezold_20231215.pdf";
@@ -27,7 +25,7 @@ export function Header({ activeTab, setActiveTab, tabs }: HeaderProps) {
         <Tabs value={activeTab} onChange={handleTabChange}>
           <Tabs.List>
             {tabs.map((tab) => (
-              <Tabs.Tab value={tab.id}>{tab.name}</Tabs.Tab>
+              <Tabs.Tab key={tab.id} value={tab.id}>{tab.name}</Tabs.Tab>
             ))}
           </Tabs.List>
         </Tabs>

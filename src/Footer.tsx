@@ -1,4 +1,3 @@
-import React from "react";
 import { Flex, Image, ActionIcon } from "@mantine/core";
 import { IconContext } from "react-icons";
 import { MdOutlineEmail } from "react-icons/md";

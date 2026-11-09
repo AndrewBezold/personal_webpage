@@ -1,11 +1,11 @@
-import React from "react";
+import { ReactNode } from "react";
 import { Flex } from "@mantine/core";
 import classes from "./Content.module.css";
 
 export interface TabType {
   id: string;
   name: string;
-  tab: any;
+  tab: ReactNode;
 }
 
 interface ContentProps {

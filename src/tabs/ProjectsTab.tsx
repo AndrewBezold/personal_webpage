@@ -1,4 +1,3 @@
-import React from "react";
 import { Flex, Anchor, Text } from "@mantine/core";
 import Projects from "../static/projects.json";
 
@@ -9,11 +8,11 @@ interface DescriptionPiece {
 }
 
 function parseDescription(description: Array<DescriptionPiece>) {
-  return description.map((piece) =>
+  return description.map((piece, index) =>
     piece.type === "string" ? (
       piece.string
     ) : (
-      <Anchor href={piece.link}>{piece.string}</Anchor>
+      <Anchor key={index} href={piece.link}>{piece.string}</Anchor>
     )
   );
 }
@@ -40,6 +39,7 @@ export function ProjectsTab() {
     <Flex direction="column" gap="md">
       {Projects.map((project: ProjectProps) => (
         <Project
+          key={project.name}
           name={project.name}
           link={project.link}
           description={project.description}

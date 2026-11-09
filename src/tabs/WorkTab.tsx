@@ -1,4 +1,3 @@
-import React from "react";
 import { Flex, SimpleGrid, Text, Title, Image } from "@mantine/core";
 import WorkExperience from "../static/work_experience.json";
 import PythonIcon from "../static/icons/python.svg";
@@ -28,8 +27,8 @@ function Job({ company, title, dates, experience }: JobProps) {
         <Text>{title}</Text>
       </Flex>
       <Flex direction="column" mt="sm">
-        {experience.map((line) => (
-          <Text pl="xl">- {line}</Text>
+        {experience.map((line, index) => (
+          <Text key={index} pl="xl">- {line}</Text>
         ))}
       </Flex>
     </Flex>
@@ -91,12 +90,12 @@ export function WorkTab() {
         <Flex>
           <SimpleGrid cols={skills.length} spacing="md" verticalSpacing="xs">
             {skills.map((skill) => (
-              <Flex justify="center">
+              <Flex key={skill.name} justify="center">
                 <Image src={skill.icon} w="100px" fit="contain" />
               </Flex>
             ))}
             {skills.map((skill) => (
-              <Flex justify="center">
+              <Flex key={skill.name} justify="center">
                 <Text>{skill.name}</Text>
               </Flex>
             ))}
@@ -106,6 +105,7 @@ export function WorkTab() {
       <Flex direction="column" gap="md">
         {WorkExperience.map((job) => (
           <Job
+            key={job.company}
             company={job.company}
             title={job.title}
             dates={job.dates}

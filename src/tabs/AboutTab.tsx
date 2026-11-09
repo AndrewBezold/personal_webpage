@@ -1,14 +1,13 @@
-import React from "react";
 import { Flex, Title, Text, Image } from "@mantine/core";
 import image from "../static/headshot.png";
 import about_me from "../static/about_me.txt";
 import classes from "./AboutTab.module.css";
 
 //https://stackoverflow.com/a/69718380
-function format(str: string, ...args: any[]) {
+function format(str: string, ...args: Array<string | number>) {
   return str.replace(/{([0-9]+)}/g, function (match, index) {
     // check if the argument is there
-    return typeof args[index] == "undefined" ? match : args[index];
+    return typeof args[index] == "undefined" ? match : String(args[index]);
   });
 }
 
@@ -35,8 +34,8 @@ export function AboutTab() {
       <Flex className={classes.text}>
         <Title>Andrew Bezold</Title>
         <Flex className={classes.about}>
-          {about_me_formatted.split("\n").map((par) => (
-            <Text>{par}</Text>
+          {about_me_formatted.split("\n").map((par, index) => (
+            <Text key={index}>{par}</Text>
           ))}
         </Flex>
       </Flex>
