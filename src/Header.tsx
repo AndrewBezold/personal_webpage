@@ -1,6 +1,6 @@
 import { Flex, Tabs, Button } from "@mantine/core";
 import { TabType } from "./Content";
-import Resume from "./static/Resume_Andrew_Bezold_20231215.pdf";
+import Resume from "./static/Resume_Andrew_Bezold_20260814.pdf";
 
 interface HeaderProps {
   activeTab: string;

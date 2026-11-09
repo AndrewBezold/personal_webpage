@@ -20,9 +20,9 @@ function Job({ company, title, dates, experience }: JobProps) {
   return (
     <Flex direction="column">
       <Flex direction="column">
-        <Flex justify="space-between" align="end" w="400px">
+        <Flex justify="space-between" align="end" w="500px" gap="md">
           <Title order={3}>{company}</Title>
-          <Text>{dates}</Text>
+          <Text style={{ whiteSpace: "nowrap" }}>{dates}</Text>
         </Flex>
         <Text>{title}</Text>
       </Flex>
